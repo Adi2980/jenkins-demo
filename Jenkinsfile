@@ -2,17 +2,17 @@ pipeline {
     agent any
 
     stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/Adi2980/jenkins-demo.git'
-            }
-        }
-
         stage('Build') {
             steps {
-                sh 'echo "Running build stage..."'
-                sh './app.sh'
+                script {
+                    if (isUnix()) {
+                        sh 'echo Running build stage...'
+                        sh 'echo Hello from Jenkins CI Demo!'
+                    } else {
+                        bat 'echo Running build stage...'
+                        bat 'echo Hello from Jenkins CI Demo!'
+                    }
+                }
             }
         }
     }
