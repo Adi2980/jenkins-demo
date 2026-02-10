@@ -10,7 +10,7 @@ pipeline {
                         sh 'echo Hello from Jenkins CI Demo!'
                     } else {
                         bat 'echo Running build stage...'
-                        bat 'echo Hello from Jenkins CI Demo!'
+                        bat 'echo Hello from Jenkins CI Demo Revised Interval HELLO!'
                     }
                 }
             }
